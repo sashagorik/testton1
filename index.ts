@@ -15,7 +15,11 @@ const endpoint = await getHttpEndpoint({
   });
 
   // initialize ton library
-  const client = new TonClient({ endpoint });
+const client = new TonClient({ endpoint });
+
+const miningData = await client.callGetMethod(collection, 'get_mining_data')
+
+  console.log(miningData)
 
 main()
 
